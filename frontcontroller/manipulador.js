@@ -1,10 +1,14 @@
 var HomeFrontController = require('./home-frontcontroller.js');
-var LoginFrontController = require('./login-frontcontroller.js')
+var LoginFrontController = require('./login-frontcontroller.js');
+var ErroFrontController = require('./erro-frontcontroller.js');
+
 const manipulador = (request, response) => {  
   
   if (request.method == 'GET') {
-    console.log(request.url);
-  	switch(request.url) {
+    
+    //console.log(request.url);
+  	
+    switch(request.url) {
       case '/':
           hfc = new HomeFrontController();
           hfc.executa(response);
@@ -14,7 +18,8 @@ const manipulador = (request, response) => {
           lfc.executa(response);
           break;
       default:
-          response.end('NAO RECONHECIDO');
+          efc = new ErroFrontController();
+          efc.executa(response);
     } 
   }
   else if (request.method == 'POST') {
