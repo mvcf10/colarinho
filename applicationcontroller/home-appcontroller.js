@@ -5,7 +5,6 @@ var Homeappcontroller = function () {
 	Applicationcontroller.call(this);
 	this.nome = 'HOME CONTROLLER';
 	this.view = '/../view/home.html';
-	this.command = '';
 
 }
 //herança

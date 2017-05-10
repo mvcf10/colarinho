@@ -5,7 +5,6 @@ var Loginappcontroller = function () {
 	Applicationcontroller.call(this);
 	this.nome = 'LOGIN CONTROLLER';
 	this.view = '/../view/login.html';
-	this.command = '';
 
 }
 //herança

@@ -6,7 +6,6 @@ var ApplicationController = function () {
 	//Construtor
 	this.nome = 'APPLICATION CONTROLLER';
 	this.view = 'VIEW';
-	this.command = 'COMMAND';
 }
 
 ApplicationController.prototype.getView = function () {
@@ -14,16 +13,13 @@ ApplicationController.prototype.getView = function () {
 
 }
 
+//COMMAND
 ApplicationController.prototype.mostraView = function(obj) {
-
-	
 
 	fs.readFile(__dirname + this.view,'utf8', (err, data) => {
 
 		if (err) {
-
-			console.logn(err);
-
+			console.log(err);
 		}
 
 		else {
