@@ -1,25 +1,18 @@
-var HomeController = require('./homecontroller.js');
-var fs = require('fs');
+var HomeFrontController = require('./home-frontcontroller.js');
+var LoginFrontController = require('./login-frontcontroller.js')
 const manipulador = (request, response) => {  
   
   if (request.method == 'GET') {
-
+    console.log(request.url);
   	switch(request.url) {
       case '/':
-          hc = new HomeController();
-          
-          fs.readFile(__dirname + hc.getController(),'utf8', (err, data) => {
-            response.writeHead(200, {'Content-Type': 'text/html'});
-            response.write(data);
-            //console.log(hc.getController());
-            response.end();
-          });
-          
-          //response.end('Acho que vc esta no HOME');
-          
+          hfc = new HomeFrontController();
+          hfc.executa(response);
           break;
       case '/login':
-          response.end('Falta implmentar o GET DO LOGIN');
+          lfc = new LoginFrontController();
+          lfc.executa(response);
+          break;
       default:
           response.end('NAO RECONHECIDO');
     } 
