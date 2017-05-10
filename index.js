@@ -1,4 +1,4 @@
-//Main
+//Iniciando a Aplicação Web
 
 const http = require('http')  
 const port = 3000
@@ -9,8 +9,8 @@ const server = http.createServer(manipulador);
 
 server.listen(port, (err) => {  
   if (err) {
-    return console.log('something bad happened', err)
+    return console.log('Opsss.. aconteceu alguma coisa errada: ', err)
   }
 
-  console.log(`O servidor está rodando na porta: ${port}`)
+  console.log(`A Aplicação WEB está rodando em Localhost na porta: ${port}`)
 })

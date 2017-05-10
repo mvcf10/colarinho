@@ -1,9 +1,11 @@
 var Frontcontroller = require('./frontcontroller.js');
+var HomeAppController = require('../applicationcontroller/home-appcontroller.js');
 
 var HomeController = function () {
 
 	Frontcontroller.call(this);
-	this.controller = 'ESSE EH HOME CONTROLLER';
+	home = new HomeAppController();
+	this.controller = home.getView();
 
 }
 //herança

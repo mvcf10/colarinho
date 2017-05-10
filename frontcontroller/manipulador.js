@@ -1,5 +1,5 @@
 var HomeController = require('./homecontroller.js');
-
+var fs = require('fs');
 const manipulador = (request, response) => {  
   
   if (request.method == 'GET') {
@@ -7,7 +7,16 @@ const manipulador = (request, response) => {
   	switch(request.url) {
       case '/':
           hc = new HomeController();
-          response.end(hc.getController());
+          
+          fs.readFile(__dirname + hc.getController(),'utf8', (err, data) => {
+            response.writeHead(200, {'Content-Type': 'text/html'});
+            response.write(data);
+            //console.log(hc.getController());
+            response.end();
+          });
+          
+          //response.end('Acho que vc esta no HOME');
+          
           break;
       case '/login':
           response.end('Falta implmentar o GET DO LOGIN');
