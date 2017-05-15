@@ -6,8 +6,8 @@ const manipulador = (request, response) => {
   
   if (request.method == 'GET') {
     
-    //console.log(request.url);
-  	
+    //console.log(request.headers.);
+
     switch(request.url) {
       case '/':
           hfc = new HomeFrontController();
@@ -32,7 +32,7 @@ const manipulador = (request, response) => {
   }
 
   else {
-  	response.end('Ainda não preparado para métodos diferentes de GET');
+  	response.end('Ainda não preparado para métodos diferentes de GET/POST');
   }
   
 }
