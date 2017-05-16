@@ -1,4 +1,5 @@
 //Classe FrontController
+var ApplicationController = require('../applicationcontroller/applicationcontroller.js');
 
 var FrontController = function () {
 	//Construtor
@@ -13,6 +14,11 @@ FrontController.prototype.getController = function () {
 
 FrontController.prototype.imprime = function () {
 	console.log(this.controller);
+}
+
+FrontController.prototype.executa = function(req,res) {
+	ac = new ApplicationController();
+	ac.mostraView(req,res);
 }
 
 module.exports = FrontController;

@@ -1,38 +1,15 @@
-var HomeFrontController = require('./home-frontcontroller.js');
-//var LoginFrontController = require('./login-frontcontroller.js');
-//var ErroFrontController = require('./erro-frontcontroller.js');
-//var fs = require('fs');
+var Frontcontroller = require('./frontcontroller.js');
 
 const manipulador = (request, response) => {  
 
   if (request.method == 'GET') {
-    
-    //console.log(request.url);
-    hfc = new HomeFrontController();
-    hfc.executa(request,response);
 
-
-/*    switch(request.url) {
-      case '/':
-          hfc = new HomeFrontController();
-          hfc.executa(response);
-          break;
-      case '/login':
-          lfc = new LoginFrontController();
-          lfc.executa(response);
-          break;
-      default:
-          efc = new ErroFrontController();
-          efc.executa(response);
-    }*/ 
+    fc = new Frontcontroller();
+    fc.executa(request,response);
   }
+
   else if (request.method == 'POST') {
-   switch(request.url) {
-      case '/login':
-          response.end('Falta implmentar o POST DO LOGIN');
-      default:
-          response.end('NAO RECONHECIDO');
-    } 
+    response.end('Opa.. trabalhando no post');
   }
 
   else {
