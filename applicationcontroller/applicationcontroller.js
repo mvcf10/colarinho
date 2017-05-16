@@ -12,7 +12,7 @@ ApplicationController.prototype.getView = function () {
 }
 
 //COMMAND
-ApplicationController.prototype.mostraView = function(req,res) {
+ApplicationController.prototype.mostraViewGenerico = function(req,res) {
 
 	fs.readFile('./' + req.url, (err, data) => {
 
@@ -32,6 +32,44 @@ ApplicationController.prototype.mostraView = function(req,res) {
                                 '.js' : 'text/javascript'
                                 }[ req.url.substr(dotoffset) ];
             
+            res.writeHead(200, {'Content-Type': mimetype});
+            res.write(data);
+            res.end();
+            
+        } else {
+            acErro = new Erro();
+            acErro.mostraErro(res);            
+            
+        }
+  });      
+}
+
+ApplicationController.prototype.mostraViewNewsList = function(req,res) {
+
+    fs.readFile('./view/news-list.html', (err, data) => {
+
+        if (!err) {
+            
+            var mimetype = 'text/html';
+            res.writeHead(200, {'Content-Type': mimetype});
+            res.write(data);
+            res.end();
+            
+        } else {
+            acErro = new Erro();
+            acErro.mostraErro(res);            
+            
+        }
+  });      
+}
+
+ApplicationController.prototype.mostraViewNewsCreate = function(req,res) {
+
+    fs.readFile('./view/news-create.html', (err, data) => {
+
+        if (!err) {
+            
+            var mimetype = 'text/html';
             res.writeHead(200, {'Content-Type': mimetype});
             res.write(data);
             res.end();

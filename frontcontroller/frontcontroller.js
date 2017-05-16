@@ -16,9 +16,19 @@ FrontController.prototype.imprime = function () {
 	console.log(this.controller);
 }
 
-FrontController.prototype.executa = function(req,res) {
+FrontController.prototype.executaGenerico = function(req,res) {
 	ac = new ApplicationController();
-	ac.mostraView(req,res);
+	ac.mostraViewGenerico(req,res);
 }
 
+FrontController.prototype.executaNewsList = function(req,res) {
+	ac = new ApplicationController();
+	ac.mostraViewNewsList(req,res);
+}
+
+
+FrontController.prototype.executaNewsCreate = function(req,res) {
+	ac = new ApplicationController();
+	ac.mostraViewNewsCreate(req,res);
+}
 module.exports = FrontController;

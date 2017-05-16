@@ -35,8 +35,8 @@ News.prototype.save = function(obj) {
   		if(err) {
     		return console.error('error running query', err);
   		}
- 	console.log('resultado: ', res.rows);
-  	return res.rows
+ 	console.log('Inserido!');
+  	
 	});
 	
 };
