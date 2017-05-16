@@ -1,0 +1,33 @@
+.news .title {
+	text-align: center;	
+	font-size: 250%;
+	padding-bottom: 10px;
+}
+
+.news .subtitle {
+	text-align: center;
+	font-size: 120%;
+	padding-bottom: 20px;
+}
+
+.news p {
+	 line-height: 1.5;
+	 margin: 20px 10px;
+	 text-align: justify;
+	 font-size: 120%;	 
+}
+
+.news img {
+	margin: 20px 20%;	
+}
+
+.news ul {
+	line-height: 1.5;
+	font-size: 120%;
+	list-style-position: outside;
+	padding-left: 60px;
+}
+
+.news li {
+	list-style-type: disc;
+}

@@ -1,14 +1,18 @@
 var HomeFrontController = require('./home-frontcontroller.js');
-var LoginFrontController = require('./login-frontcontroller.js');
-var ErroFrontController = require('./erro-frontcontroller.js');
+//var LoginFrontController = require('./login-frontcontroller.js');
+//var ErroFrontController = require('./erro-frontcontroller.js');
+//var fs = require('fs');
 
 const manipulador = (request, response) => {  
-  
+
   if (request.method == 'GET') {
     
-    //console.log(request.headers.);
+    //console.log(request.url);
+    hfc = new HomeFrontController();
+    hfc.executa(request,response);
 
-    switch(request.url) {
+
+/*    switch(request.url) {
       case '/':
           hfc = new HomeFrontController();
           hfc.executa(response);
@@ -20,7 +24,7 @@ const manipulador = (request, response) => {
       default:
           efc = new ErroFrontController();
           efc.executa(response);
-    } 
+    }*/ 
   }
   else if (request.method == 'POST') {
    switch(request.url) {

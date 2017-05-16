@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Enviar notícia</title>
+		<meta charset="UTF-8">
+		<link rel="icon" href="resources/images/favicon.png">
+		<link rel="stylesheet" href="resources/styles/reset.css">
+		<link rel="stylesheet" href="resources/styles/site.css">
+		<link rel="stylesheet" href="resources/styles/news-edit.css">
+	</head>
+	<body>
+		<header id="site-header">
+			<figure>
+				<img alt="Logotipo colarinho branco" src="resources/images/logo.gif" id="site-logo">
+				<figcaption id="site-name">Colarinho branco</figcaption>
+			</figure>			
+			<h1 id="page-title">Enviar notícia</h1>			
+		</header>	
+		<aside>
+			<nav id="site-navbar">
+				<ul>
+					<li><a href="news-list.html">Notícias</a></li>
+					<li><a href="news-create.html">Enviar</a></li>			
+				</ul>
+			</nav>
+		</aside>	
+		<main>	
+			<div id="site-content">
+				<form>
+					<label for="title">Título:</label>
+					<input id="title" name="title" type="text" placeholder="Título" maxlength="75" required autofocus>
+					
+					<label for="date">Data e horário:</label>
+					<input id="date" name="date" type="datetime" required>
+					
+					<label for="headline-content">Conteúdo:</label>
+					<textarea id="headline-content" name="headline-content" rows="3"
+						placeholder="Manchete" maxlength="350" required></textarea>
+					
+					<label for="news-content">Conteúdo:</label>
+					<textarea id="news-content" name="content" rows="10" placeholder="Conteúdo" required></textarea>
+					
+					<label for="headline-image">Imagem da manchete:</label>
+					<input id="headline-image" name="headline-image" type="file" accept=".jpg,jpeg,.png">
+					
+					<button type="submit"><strong>Enviar</strong></button>
+				</form>
+			</div>
+		</main>
+		<footer id="site-footer">
+			&copy; Caio Holanda Costa 2017
+		</footer>
+	</body>
+</html>

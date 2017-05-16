@@ -14,9 +14,35 @@ ApplicationController.prototype.getView = function () {
 }
 
 //COMMAND
-ApplicationController.prototype.mostraView = function(obj) {
+ApplicationController.prototype.mostraView = function(req,res) {
 
-	fs.readFile(__dirname + this.view,'utf8', (err, data) => {
+	fs.readFile('./' + req.url, (err, data) => {
+
+    	if (!err) {
+            var dotoffset = req.url.lastIndexOf('.');
+            //console.log(req.url.substr(dotoffset));
+            var mimetype = dotoffset == -1
+                            ? 'text/plain'
+                            : {
+                                '.html' : 'text/html',
+                                '.ico' : 'image/x-icon',
+                                '.jpg' : 'image/jpeg',
+                                '.jpeg': 'image/jpeg',
+                                '.png' : 'image/png',
+                                '.gif' : 'image/gif',
+                                '.css' : 'text/css',
+                                '.js' : 'text/javascript'
+                                }[ req.url.substr(dotoffset) ];
+            res.setHeader('Content-type' , mimetype);
+            res.end(data);
+            //console.log( req.url, mimetype );
+        } else {
+            console.log ('file not found: ' + req.url);
+            res.writeHead(404, "Not Found");
+            res.end();
+        }
+  });
+	/*fs.readFile(__dirname + this.view, (err, data) => {
 
 		if (err) {
 			console.log(err);
@@ -28,7 +54,7 @@ ApplicationController.prototype.mostraView = function(obj) {
         		obj.end();	
 		}
         
-    });
+    });*/
           
 }
 

@@ -11,10 +11,10 @@ var HomeFrontController = function () {
 HomeFrontController.prototype = new Frontcontroller();
 HomeFrontController.prototype.constructor = HomeFrontController;
 
-HomeFrontController.prototype.executa = function (obj) {
+HomeFrontController.prototype.executa = function (req,res) {
 
 	home = new HomeAppController();
-	home.mostraView(obj);
+	home.mostraView(req,res);
 }
 
 module.exports = HomeFrontController;
