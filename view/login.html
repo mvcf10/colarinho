@@ -2,22 +2,31 @@
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Aplicação Web | Login</title> 
+    <title>Colarinho Branco | Login</title>
+    <link rel="stylesheet" href="css/news-show.css">
+		<link rel="stylesheet" href="css/news-commentaries.css">
+    <style>
+      body{
+        background-color: lightgray;
+      }
+      button{
+        display: block;
+        position: absolute;
+      }
+    </style>
   </head>
-
   <body>
-    <div>
-      <form>
-        <h2>Login</h2>
-        <label>E-mail</label>
-        <input type="email" id="inputEmail" placeholder="Email" required autofocus>
-        <label>Password</label>
-        <input type="password" id="inputPassword" placeholder="Password" required>
-        <button type="submit">Entrar</button>
+    <main>
+    <div id="site-content">
+      <form id="add-commentary-form">
+        <h1>Login</h1>
+        <label for="commentary-author">Email:</label>
+        <input type="email" name="email" id="email" placeholder=""	maxlength=50 required autofocus>
+        <label for="commentary-content">Senha:</label>
+        <input type="password" name="password" id="password" placeholder=""	maxlength=50 required>
+        <button type="submit" id="submit-commentary-button"><strong>Entrar</strong></button>
       </form>
     </div>
-    <div>
-      <p>Caso deseje voltar para o HOME, clique <a href="./">aqui</a></p>
-    </div>  
+    </main> 
   </body>
 </html>
