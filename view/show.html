@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Colarinho Branco | Notícia</title>
+    <link rel="stylesheet" href="css/news-show.css">
+    <link rel="stylesheet" href="css/news-commentaries.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="icon" href="images/favicon.png">
+</head>
+
+<body>
+    <header id="site-header">
+        <a href="list.html">
+            <figure>
+                <img id="site-logo" alt="Logotipo colarinho branco" src="images/logo.gif">
+                <figcaption id="site-name">Colarinho branco</figcaption>
+            </figure>
+        </a>
+        <h1 id="page-title">Notícia</h1>
+    </header>
+    <aside>
+        <nav id="site-navbar">
+            <ul>
+                <li><a href="list.html">Notícias</a></li>
+                <li><a href="edit.html">Enviar</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <main>
+        <div id="site-content">
+            <article class="news">
+                <h1 class="title">Iate de Eike avaliado em US$ 19 milhões está em estaleiro no RJ há 4 anos à espera de desmanche</h1>
+                <img src="images/eike.jpg" alt="Iate de Eike Batista">
+                <div class="news-text">
+                    <pre>Uma das mais famosas aquisições do império de Eike Batista, o Pink Fleet — avaliado em US$ 19 milhões — vai virar sucata até o final deste ano. Cenário de festas e eventos badalados do Rio, o barco teve que deixar a Marina da Glória e está há 4 anos parado no estaleiro Fersan, em São Gonçalo, na Região Metropolitana.
+                    A equipe de reportagem do G1 esteve no local, mas foi impedida de entrar. Por telefone, o diretor do estaleiro, Manoel de Santana, informou que a embarcação será completamente destruída.
+                    “Esse barco é anterior à Lava Jato, um bem internacional. Ele vai ser sucateado, destruído. Ainda não fizemos nada porque não podemos ter risco de acidente, tem a limpeza dos tanques, vamos dar um destino final para o material e cada caso é um caso. Nossa empresa foi contratada pela EBX para fazer esse serviço. Queremos fazer até o final do ano”, disse o diretor.
+                    Em uma página na internet, que possui o nome do barco como domínio, fãs falam em promover um abaixo assinado para evitar que ele seja sucateado.
+                    “Quer dar uma olhada no Pink Fleet? (...) E aí... coisa linda de Deus? Pois é... também acho! Houve alguns boatos de que ele ia virar sucata, você acredita? Estamos elaborando um abaixo-assinado para que isso não aconteça de forma alguma”, diz a postagem.
+                    Quando precisou conter seus custos, o empresário chegou a tentar vender o barco para se livrar da manutenção, avaliada em R$ 300 mil por mês. O iate, inaugurado em 2007, tinha restaurante, pista de dança e uma loja da joalheria H. Stern.
+                    Também foi cenário de casamentos, desfiles de moda e até ensaios sensuais. Em 2011, as cantoras Katy Perry e Rihanna curtiram uma festa no barco depois do Rock in Rio.
+                    O G1 não conseguiu contato com a EBX.
+                    Fiança de R$ 52 milhões
+                    Eike Batista foi preso na Operação Eficiência, em janeiro deste ano, após dois doleiros dizerem que ele pagou US$ 16,5 milhões a Sérgio Cabral, ex-governador do Rio, o equivalente a R$ 52 milhões em propina. O pagamento teria sido feito em troca de contratos com o governo estadual. Ele já foi denunciado nas investigações por corrupção e lavagem de dinheiro.
+                    No dia 30 de abril, ele conseguiu um habeas corpus através do juiz Gilmar Mendes, do Supremo Tribunal Federal (STF), e deixou o presídio de Bangu, na Zona Oeste do Rio, para cumprir prisão domiciliar em sua casa, no Jardim Botânico, na Zona Sul. Para isso, ele tem que cumprir nove medidas cautelares, como a vistoria da Polícia Federal em casa sem aviso prévio, afastamento das empresas nas quais é sócio e entrega do passaporte.
+                    O juiz Marcelo Brêtas, da 7ª Vara Criminal Federal, estipulou uma medida cautelar adicional: uma fiança de R$ 52 milhões para que Eike permaneça em prisão domiciliar. Na segunda-feira (8), a pedida da defesa, suspendeu o prazo, que terminaria na terça (9).
+                    A suspensão se deu devido a um pedido da defesa do empresário. Os advogados de Eike Batista alegaram que todos os bens do empresário, no valor de R$ 240 milhões, estão bloqueados em outro processo, que tramita na 3ª Vara Federal Criminal do Rio.
+                    Também na segunda, a Procuradoria Geral da República (PGR) enviou pedido ao Supremo Tribunal Federal (STF) para que o ministro Gilmar Mendes deixe a relatoria de um habeas corpus no qual concedeu liberdade a Eike. Além disso, Janot quer a anulação de todas as decisões sobre o habeas corpus, incluindo a que mandou soltar o empresário.
+                    </pre>
+                </div>
+            </article>
+            <hr>
+            <aside class="commentaries">
+                <h1>Comentários</h1>
+                <div id="news-commentaries">
+
+                    <!--Elaborar estratégia para mostrar os comentários-->
+                    <!--<c:forEach items="" var="item" varStatus="status">
+							<div class="comment">
+								<h2></h2>
+								<p></p>
+							</div>
+						</c:forEach>-->
+                </div>
+
+                <form id="add-commentary-form">
+                    <input type="hidden" value="" name="newsId">
+
+                    <label for="commentary-author">Autor:</label>
+                    <input type="text" name="author" id="commentary-author" placeholder="Autor do comentário" maxlength=50 required>
+
+                    <label for="commentary-content">Comentário:</label>
+                    <textarea id="commentary-content" name="content" rows="3" placeholder="Comentário" maxlength="350" required></textarea>
+
+                    <button type="submit" id="submit-commentary-button"><strong>Enviar</strong></button>
+                </form>
+
+            </aside>
+        </div>
+    </main>
+    <footer id="site-footer">
+        &copy; Caio Holanda Costa 2017
+    </footer>
+    <img src="images/ajax-loader.gif" alt="Processando requisição" id="ajaxloader" class="invisible">
+    <script src="js/commentaries.js"></script>
+</body>
+
+</html>

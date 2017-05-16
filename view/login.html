@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>Colarinho Branco | Login</title>
     <link rel="stylesheet" href="css/news-show.css">
-		<link rel="stylesheet" href="css/news-commentaries.css">
+    <link rel="stylesheet" href="css/news-commentaries.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="icon" href="images/favicon.png">
     <style>
-      body{
-        background-color: lightgray;
-      }
       button{
         display: block;
         position: absolute;
@@ -16,10 +16,18 @@
     </style>
   </head>
   <body>
+    <header id="site-header">
+        <a href="list.html">
+            <figure>
+                <img id="site-logo" alt="Logotipo colarinho branco" src="images/logo.gif">
+                <figcaption id="site-name">Colarinho branco</figcaption>
+            </figure>
+        </a>
+        <h1 id="page-title">Login</h1>
+    </header>
     <main>
     <div id="site-content">
-      <form id="add-commentary-form">
-        <h1>Login</h1>
+      <form id="add-commentary-form">        
         <label for="commentary-author">Email:</label>
         <input type="email" name="email" id="email" placeholder=""	maxlength=50 required autofocus>
         <label for="commentary-content">Senha:</label>
@@ -27,6 +35,9 @@
         <button type="submit" id="submit-commentary-button"><strong>Entrar</strong></button>
       </form>
     </div>
-    </main> 
+    </main>
+    <footer id="site-footer">
+        &copy; Caio Holanda Costa 2017
+    </footer> 
   </body>
 </html>
