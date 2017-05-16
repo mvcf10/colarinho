@@ -1,0 +1,22 @@
+{
+  "name": "engenhariaweb",
+  "version": "1.0.0",
+  "description": "Trabalho da Disciplina de Engenharia de Software para Web - Especialização em Engenharia de Software - 8a Turma - UECE - 2017",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvcf10/engenhariaweb.git"
+  },
+  "author": "Vinicius Figueiredo (mvcf10@gmail.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mvcf10/engenhariaweb/issues"
+  },
+  "homepage": "https://github.com/mvcf10/engenhariaweb#readme",
+  "dependencies": {
+    "pg": "^6.2.2"
+  }
+}
