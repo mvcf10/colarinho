@@ -1,5 +1,6 @@
 var fs = require('fs');
 var Erro = require('./erro-applicationcontroller.js');
+var DaoNews = require('../dao/news.js');
 
 var ApplicationController = function () {
 	//Construtor
@@ -45,6 +46,13 @@ ApplicationController.prototype.mostraViewGenerico = function(req,res) {
 }
 
 ApplicationController.prototype.mostraViewNewsList = function(req,res) {
+
+    //Buscar as notícias no banco de dados
+    dao = new DaoNews();
+    noticias = dao.findAll();
+    console.log(noticias);
+
+    
 
     fs.readFile('./view/news-list.html', (err, data) => {
 

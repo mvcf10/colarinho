@@ -22,8 +22,9 @@ News.prototype.findAll = function() {
   		if(err) {
     		return console.error('error running query', err);
   		}
- 	console.log('resultado: ', res.rows);
-  	return res.rows
+ 	    
+      console.log('resultado: ', res);
+  	  return res.rows
 	});
 	
 };
