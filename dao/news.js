@@ -18,14 +18,28 @@ News.prototype.get = function(id) {
 
 News.prototype.findAll = function() {
 
-	bd.query('SELECT * from news order by date desc',  function(err, res) {
-  		if(err) {
-    		return console.error('error running query', err);
-  		}
- 	    
-      console.log('resultado: ', res);
-  	  return res.rows
-	});
+  return new Promise((resolve, reject) => {
+    bd.query('SELECT * from news order by date desc',  function(err, res) {
+      if(err) {
+        console.error('error running query', err);
+        return reject(err);
+      }
+
+      return resolve(res.rows);
+    });
+
+
+
+    /*http.get(apiServer.getServer, function(resp){
+      resp.on("data", (chunk) => {
+        //console.log(chunk.toString());
+        return resolve(JSON.parse(chunk));
+        });
+      }).on("error", function(e){
+        //console.log("Got error: " + e.message);
+        return reject(e.message);
+        }); */   
+  })
 	
 };
 
