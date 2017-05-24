@@ -18,10 +18,10 @@
 		</header>	
 		<aside>
 			<nav id="site-navbar">
-				<ul>
+  				<ul>
 					<li><a href="/news">Notícias</a></li>
 					<li><a href="/news/create">Enviar</a></li>			
-				</ul>
+  				</ul>
 			</nav>
 		</aside>	
 		<main>	
@@ -36,100 +36,11 @@
 					  <a href="./news/show/<%= noticias[i].id %> "><%= noticias[i].title %></a>
 					</h2>
 					<a href="./news/show/<%= noticias[i].id %> "><img src="<%= noticias[i].headline_image %>" class="news-headline-image"></a>
-					<time datetime="<%= noticias[i].date %>" class="news-headline-time"><%= noticias[i].date %></time>
+					<time datetime="<%= noticias[i].date %>" class="news-headline-time"><%= noticias[i].date;  %></time>
 					<p><%= noticias[i].content %></p>
 				</article>
 			<% } %>
-				<article class="news-headline odd">
 				
-					<h2 class="news-headline-title">
-<a href="./view/news-show.html">Eike Batista vai para prisão domiciliar</a>
-					</h2>
-					
-					<a href="./view/news-show.html"><img src="./view/resources/images/eikebangu-hl.jpg" class="news-headline-image"></a>
-					<time datetime="2017-04-30" class="news-headline-time">30 de Abril de 2017</time>
-					<p>O empresário Eike Batista deixou a Penitenciária Bandeira Stampa, no Complexo Penitenciário de
-					Gericinó, em Bangu, na Zona Oeste do Rio, por volta das 9h25 deste domingo (30) . Ele agora cumpre
-					prisão domiciliar em sua casa, no Jardim Botânico, na Zona Sul, após conseguir um habeas corpus no
-					Supremo Tribunal Federal (STF).</p>
-				
-				</article>
-				
-				<article class="news-headline even">
-				
-					<h2 class="news-headline-title">
-						<a href="#">Temer diz que país trabalhará com ou sem protestos</a>
-					</h2>
-					
-					<a href="#"><img src="./view/resources/images/temer-discurso-protestos.jpg" class="news-headline-image"></a>
-					<time datetime="2017-04-30" class="news-headline-time">30 de Abril de 2017</time>		
-					<p>O presidente Michel Temer afirmou neste domingo (30), em São Paulo, que as contestações às reformas
-					trabalhista e da Previdência que o governo busca aprovar no Congresso são "típicas da democracia", mas
-					ressalvou que "haja protesto ou não haja protesto, o Brasil continua e continuará a trabalhar".</p>
-				
-				</article>
-				
-				<article class="news-headline odd">
-				
-					<h2 class="news-headline-title">
-						<a href="#">Doria recebe flor de ciclista e atira no chão</a>
-					</h2>
-					
-					<a href="#"><img src="./view/resources/images/doria-flor-chao.png" class="news-headline-image"></a>
-					<time datetime="2017-04-30" class="news-headline-time">30 de Abril de 2017</time>
-					
-					<p>O prefeito João Doria (PSDB) recebeu flores de uma ciclista na Avenida Paulista, no início da tarde
-					deste domingo (30), quando saía de carro da cerimônia de abetura da Japan House São Paulo. "Esta flor é
-					em homenagem aos mortos nas marginais", disse a mulher. Doria não pegou a flor. A ciclista então colocou
-					o braço para dentro da janela do passageiro e deixou a flor no painel do carro. Doria pegou a flor e a
-					atirou no chão para fora do carro. "Agradeço".</p>
-				
-				</article>
-				
-				<article class="news-headline even">
-				
-					<h2 class="news-headline-title">
-						<a href="#">Presentes recebidos por Lula voltarão ao patrimônio federal</a>
-					</h2>
-					
-					<a href="#"><img src="./view/resources/images/sergio-moro.jpeg" class="news-headline-image"></a>
-					<time datetime="2014-07-01" class="news-headline-time">30 de Abril de 2017</time>		
-					<p>O juiz federal Sérgio Moro determinou nesta sexta-feira (28) que 21 objetos que eram de posse do
-					ex-presidente Luiz Inácio Lula da Silva e foram apreendidos na Operação Lava Jato sejam incorporados ao
-					Patrimônio da União pela Secretaria de Administração da Presidência da República. Todo o material
-					estava em um cofre no Banco do Brasil.</p>
-				
-				</article>
-				
-				<article class="news-headline odd">
-				
-					<h2 class="news-headline-title">
-						<a href="#">Dilma sabia do caixa 2, diz marqueteira ao TSE</a>
-					</h2>
-					
-					<a href="#"><img src="./view/resources/images/dilma-sabia.jpg" class="news-headline-image"></a>
-					<time datetime="2017-04-30" class="news-headline-time">30 de Abril de 2017</time>
-					<p>Mulher e sócia de João Santana, Mônica Moura disse, em depoimento ao Tribunal Superior Eleitoral,
-					que Dilma Rousseff sabia "sem nenhuma sombra de dúvida" que uma parte do valor da campanha de 2014 era
-					paga em caixa 2. No depoimento, Mônica afirmou que, em 2014, os assuntos referentes à campanha –
-					inclusive financeiros – "sempre (foram conversados) com a presidente".</p>
-				
-				</article>
-				
-				<article class="news-headline even">
-				
-					<h2 class="news-headline-title">
-						<a href="#">8 depoimentos de Marcelo Odebrecht sob sigilo</a>
-					</h2>
-					
-					<a href="#"><img src="./view/resources/images/marcelo-odebrecht-depoe.jpeg" class="news-headline-image"></a>
-					<time datetime="2017-04-30" class="news-headline-time">30 de Abril de 2017</time>
-							
-					<p>Ao menos oito termos de depoimentos prestados pelo empresário Marcelo Odebrecht em sua delação
-					premiada à Operação Lava Jato permanecem sob sigilo, conforme levantamento feito pelo blog nas
-					decisões do ministro Edson Fachin, do Supremo Tribunal Federal (STF).</p>
-				
-				</article>
 				
 			</div>
 		</main>

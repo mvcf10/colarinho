@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/mvcf10/engenhariaweb#readme",
   "dependencies": {
+    "dateformat": "^2.0.0",
     "ejs": "^2.5.6",
     "pg": "^6.2.2"
   }

@@ -2,6 +2,7 @@ var fs = require('fs');
 var Erro = require('./erro-applicationcontroller.js');
 var DaoNews = require('../dao/news.js');
 var ejs = require('ejs');
+var dateFormat = require('dateformat'); 
 
 var ApplicationController = function () {
 	//Construtor
@@ -59,7 +60,8 @@ ApplicationController.prototype.mostraViewNewsList = function(req,res) {
           //renderizando a view
           //people = ['geddy', 'neil', 'alex'];
           //console.log(resposta);
-          html = ejs.render(templateString, {noticias: resposta,user:null});
+          html = ejs.render(templateString, {noticias: resposta,dateFormat: dateFormat});
+          //html = ejs.renderFile(viewFile,{noticias: resposta,dateFormat: dateFormat});
           obj = res;
           obj.writeHead(200, {'Content-Type': mmtype});
           obj.write(html);
