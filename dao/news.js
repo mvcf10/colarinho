@@ -5,15 +5,16 @@ var News = function() {
 }
 
 News.prototype.get = function(id) {
-
-	bd.query('SELECT * from news where id=$1', [id], function(err, res) {
-  		if(err) {
-    		return console.error('error running query', err);
-  		}
- 	console.log('resultado: ', res.rows);
-  	return res.rows
-	});
-
+  return new Promise((resolve, reject) => {
+	  bd.query('SELECT * from news where id=$1', [id], function(err, res) {
+  		  if(err) {
+    		  console.error('error running query', err);
+          return reject(err);
+  		  }
+ 	  
+  	return resolve(res.rows)
+	  });
+  })
 };
 
 News.prototype.findAll = function() {

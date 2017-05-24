@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Notícias</title>
+		<title>Notícia</title>
 		<meta charset="UTF-8">
 		<link rel="icon" href="/view/resources/images/favicon.png">
 		<link rel="stylesheet" href="/view/resources/styles/reset.css">
 		<link rel="stylesheet" href="/view/resources/styles/site.css">
-		<link rel="stylesheet" href="/view/resources/styles/news-list.css">
+		<link rel="stylesheet" href="/view/resources/styles/news-show.css">
 	</head>
 	<body>
 		<header id="site-header">
@@ -14,34 +14,29 @@
 				<img alt="Logotipo colarinho branco" src="/view/resources/images/logo.gif" id="site-logo">
 				<figcaption id="site-name">Colarinho branco</figcaption>
 			</figure>			
-			<h1 id="page-title">Notícias</h1>			
+			<h1 id="page-title">Notícia</h1>			
 		</header>	
 		<aside>
 			<nav id="site-navbar">
-  				<ul>
+				<ul>
 					<li><a href="/news">Notícias</a></li>
 					<li><a href="/news/create">Enviar</a></li>			
-  				</ul>
+				</ul>
 			</nav>
 		</aside>	
 		<main>	
 			<div id="site-content">
-			<% for(var i in noticias) {
-			 	if (i % 2 === 0) { %>
-				<article class="news-headline odd">
-			<%  } else { %>
-				<article class="news-headline even">
-			<%	} %>
-					<h2 class="news-headline-title">
-					  <a href="./news/show?id=<%= noticias[i].id %>"><%= noticias[i].title %></a>
+				<article class="news">
+					<h1 class="title"><%= noticia[0].title %></h1>
+					<h2 class="subtitle">
+						<%= noticia[0].headline_content %>
 					</h2>
-					<a href="./news/show/id=<%= noticias[i].id %> "><img src="<%= noticias[i].headline_image %>" class="news-headline-image"></a>
-					<time datetime="<%= noticias[i].date %>" class="news-headline-time"><%= noticias[i].date;  %></time>
-					<p><%= noticias[i].content %></p>
+					<img src="">
+					<img src="<%= noticia[0].headline_image %>" alt="<%= noticia[0].title %>">					
+					<p>
+						<%= noticia[0].content %>						
+					</p>
 				</article>
-			<% } %>
-				
-				
 			</div>
 		</main>
 		<footer id="site-footer">

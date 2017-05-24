@@ -57,22 +57,39 @@ ApplicationController.prototype.mostraViewNewsList = function(req,res) {
     dao = new DaoNews();
     dao.findAll()
       .then(function (resposta) {
-          //renderizando a view
-          //people = ['geddy', 'neil', 'alex'];
-          //console.log(resposta);
           html = ejs.render(templateString, {noticias: resposta,dateFormat: dateFormat});
-          //html = ejs.renderFile(viewFile,{noticias: resposta,dateFormat: dateFormat});
           obj = res;
           obj.writeHead(200, {'Content-Type': mmtype});
           obj.write(html);
           obj.end();
-          //ApplicationController.prototype.renderiza(viewFile,mmtype,res);
-          //console.log(html);
       })
       .catch(error => { 
           console.log('Falha ao Obter notícias - ' + error);
-      });
-          
+      });          
+}
+
+ApplicationController.prototype.mostraViewNewsShow = function(req,res) {
+    //View para Renderizar
+    var viewFile = './view/news-show.ejs';
+    var mmtype = 'text/html';
+    var templateString = fs.readFileSync(viewFile, 'utf-8');
+    var id = req.url.slice(req.url.lastIndexOf('=')+1,req.url.length);
+    
+
+    //Buscar uma notícia no banco de dados
+    dao = new DaoNews();
+    dao.get(id)
+      .then(function (resposta) {
+          //console.log(resposta);
+          html = ejs.render(templateString, {noticia: resposta,dateFormat: dateFormat});
+          obj = res;
+          obj.writeHead(200, {'Content-Type': mmtype});
+          obj.write(html);
+          obj.end();
+      })
+      .catch(error => { 
+          console.log('Falha ao Obter a notícia - ' + error);
+      });          
 }
 
 ApplicationController.prototype.mostraViewNewsCreate = function(req,res) {
