@@ -35,7 +35,7 @@
 					<h2 class="news-headline-title">
 					  <a href="./news/show?id=<%= noticias[i].id %>"><%= noticias[i].title %></a>
 					</h2>
-					<a href="./news/show/id=<%= noticias[i].id %> "><img src="<%= noticias[i].headline_image %>" class="news-headline-image"></a>
+					<a href="./news/show?id=<%= noticias[i].id %> "><img src="<%= noticias[i].headline_image %>" class="news-headline-image"></a>
 					<time datetime="<%= noticias[i].date %>" class="news-headline-time"><%= noticias[i].date;  %></time>
 					<p><%= noticias[i].content %></p>
 				</article>

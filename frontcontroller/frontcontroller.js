@@ -45,8 +45,6 @@ FrontController.prototype.processaGet = function (req,res) {
 	else {
 		caminho = req.url;	
 		}
-	
-	//console.log(caminho);
 
     switch(caminho) {
     case '/':

@@ -3,6 +3,7 @@ var Erro = require('./erro-applicationcontroller.js');
 var DaoNews = require('../dao/news.js');
 var ejs = require('ejs');
 var dateFormat = require('dateformat'); 
+var InterceptingFilter =require('../interceptingfilter/interceptingfilter.js');
 
 var ApplicationController = function () {
 	//Construtor
@@ -48,6 +49,7 @@ ApplicationController.prototype.mostraViewGenerico = function(req,res) {
 }
 
 ApplicationController.prototype.mostraViewNewsList = function(req,res) {
+    
     //View para Renderizar
     var viewFile = './view/news-list.ejs';
     var mmtype = 'text/html';
@@ -59,7 +61,9 @@ ApplicationController.prototype.mostraViewNewsList = function(req,res) {
       .then(function (resposta) {
           html = ejs.render(templateString, {noticias: resposta,dateFormat: dateFormat});
           obj = res;
+          obj.setHeader('Set-Cookie', ['user_id:1999']);
           obj.writeHead(200, {'Content-Type': mmtype});
+
           obj.write(html);
           obj.end();
       })
@@ -93,10 +97,20 @@ ApplicationController.prototype.mostraViewNewsShow = function(req,res) {
 }
 
 ApplicationController.prototype.mostraViewNewsCreate = function(req,res) {
-    //View para Renderizar
-    var viewFile = './view/news-create.html';
-    var mmtype = 'text/html';
-    ApplicationController.prototype.renderiza(viewFile,mmtype,res);      
+    intFil = new InterceptingFilter();
+
+    //verificar se usuario está logado para poder editar, se logado pode editar. Caso contrário, mostra login.
+    if (intFil.estaLogado(req)) {
+      //View para Renderizar
+      var viewFile = './view/news-create.html';
+      var mmtype = 'text/html';
+      ApplicationController.prototype.renderiza(viewFile,mmtype,res);  
+    }
+
+    else {
+      res.end("Vixe, tem que fazer login!");
+    }
+
 }
 
 ApplicationController.prototype.getCommand = function () {
