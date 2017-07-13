@@ -1,8 +1,8 @@
 var fs = require('fs');
 var Erro = require('./erro-applicationcontroller.js');
-var DaoNews = require('../dao/news.js');
+var DaoNews = require('../dao/newsDAO.js');
 var ejs = require('ejs');
-var dateFormat = require('dateformat'); 
+var dateFormat = require('dateformat');
 var InterceptingFilter =require('../interceptingfilter/interceptingfilter.js');
 
 var ApplicationController = function () {
@@ -22,7 +22,7 @@ ApplicationController.prototype.mostraViewGenerico = function(req,res) {
 
     	if (!err) {
             var dotoffset = req.url.lastIndexOf('.');
-            
+
             var mimetype = dotoffset == -1
                             ? 'text/plain'
                             : {
@@ -35,21 +35,21 @@ ApplicationController.prototype.mostraViewGenerico = function(req,res) {
                                 '.css' : 'text/css',
                                 '.js' : 'text/javascript'
                                 }[ req.url.substr(dotoffset) ];
-            
+
             res.writeHead(200, {'Content-Type': mimetype});
             res.write(data);
             res.end();
-            
+
         } else {
             acErro = new Erro();
-            acErro.mostraErro(res);            
-            
+            acErro.mostraErro(res);
+
         }
-  });      
+  });
 }
 
 ApplicationController.prototype.mostraViewNewsList = function(req,res) {
-    
+
     //View para Renderizar
     var viewFile = './view/news-list.ejs';
     var mmtype = 'text/html';
@@ -67,9 +67,9 @@ ApplicationController.prototype.mostraViewNewsList = function(req,res) {
           obj.write(html);
           obj.end();
       })
-      .catch(error => { 
+      .catch(error => {
           console.log('Falha ao Obter notícias - ' + error);
-      });          
+      });
 }
 
 ApplicationController.prototype.mostraViewNewsShow = function(req,res) {
@@ -78,7 +78,7 @@ ApplicationController.prototype.mostraViewNewsShow = function(req,res) {
     var mmtype = 'text/html';
     var templateString = fs.readFileSync(viewFile, 'utf-8');
     var id = req.url.slice(req.url.lastIndexOf('=')+1,req.url.length);
-    
+
 
     //Buscar uma notícia no banco de dados
     dao = new DaoNews();
@@ -91,9 +91,9 @@ ApplicationController.prototype.mostraViewNewsShow = function(req,res) {
           obj.write(html);
           obj.end();
       })
-      .catch(error => { 
+      .catch(error => {
           console.log('Falha ao Obter a notícia - ' + error);
-      });          
+      });
 }
 
 ApplicationController.prototype.mostraViewNewsCreate = function(req,res) {
@@ -104,7 +104,7 @@ ApplicationController.prototype.mostraViewNewsCreate = function(req,res) {
       //View para Renderizar
       var viewFile = './view/news-create.html';
       var mmtype = 'text/html';
-      ApplicationController.prototype.renderiza(viewFile,mmtype,res);  
+      ApplicationController.prototype.renderiza(viewFile,mmtype,res);
     }
 
     else {
@@ -129,11 +129,11 @@ ApplicationController.prototype.renderiza = function (arquivo, mt, obj) {
             obj.writeHead(200, {'Content-Type': mimetype});
             obj.write(data);
             obj.end();
-            
+
         } else {
             acErro = new Erro();
-            acErro.mostraErro(obj);            
-            
+            acErro.mostraErro(obj);
+
         }
     });
 }
